@@ -104,7 +104,6 @@ avgperday <- tapply(steps_df$steps, steps_df$date, mean, na.rm = TRUE)
 avgperday[is.nan(avgperday)] <- 0
 ```
 
-
 ##### Using the indices of the NA values within the steps variable of the
 ##### impsteps_df dataframe, calculate the proper indices into the 
 ##### avgperinterval list variable in order to replace the NA values with the 
@@ -178,22 +177,6 @@ impsteps_df$day[weekdays] <- "weekday"
 
 ```r
 library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following object is masked from 'package:stats':
-## 
-##     filter
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 avgperint_day <- impsteps_df %>% 
   group_by(day, interval) %>% summarise_each(funs(mean))
 ```
