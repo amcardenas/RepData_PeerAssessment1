@@ -6,7 +6,6 @@ output: html_document
 keep_md: true
 ---
 
-
 ## Load and preprocess the data.
 ##### Load the data, marking all missing values as "NA".
 ```{r echo = TRUE}
